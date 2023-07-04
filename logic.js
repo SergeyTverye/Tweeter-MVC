@@ -1,3 +1,4 @@
+// Model
 function Tweeter() {
     const posts = [
         {

@@ -1,12 +1,10 @@
-//Controller
+// Controller
 $(function(){
-    const tweeter = Tweeter(); // Assuming Tweeter is the model
-    const renderer = Renderer(); // Assuming Renderer is the view
+    const tweeter = Tweeter();
+    const renderer = Renderer();
 
-    // Render initial posts
     renderer.renderPosts(tweeter.getPosts());
 
-    // Listener on Twit Button
     $("#post").click(function(){
         const postText = $("#input").val();
         tweeter.addPost(postText);
@@ -14,7 +12,6 @@ $(function(){
         $("#input").val(''); //clear the input
     });
 
-    // Dynamic listeners using delegation
     $("#posts").on('click', '.delete-post', function() {
         const postID = $(this).closest('.post').data('id');
         tweeter.removePost(postID);
